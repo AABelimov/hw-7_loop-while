@@ -41,19 +41,20 @@ public class Main {
 
         System.out.println();
         for(; count >= 1; count--) System.out.printf("%d ", count);
+        System.out.println();
     }
 
     public static void task3(){
-        int population = 12_000_000;
-        int bornInThousand = 17;
-        int diesInThousand = 8;
+        double population = 12_000_000.0;
+        double bornInThousand = 0.017;
+        double diesInThousand = 0.008;
         int year = 0;
 
         System.out.println("Task3:");
         while(year < 10){
             year++;
-            population = population + (population / 1000 * bornInThousand) - (population / 1000 * diesInThousand);
-            System.out.printf("Год %d, численность населения составляет %d\n", year, population);
+            population = population + (population * bornInThousand) - (population * diesInThousand);
+            System.out.printf("Год %d, численность населения составляет %.0f\n", year, population);
         }
     }
 
@@ -113,10 +114,7 @@ public class Main {
         while(year <= endYear){
             year += 79;
             if(year >= startYear && year <= endYear){
-                while(year <= endYear){
-                    System.out.println(year);
-                    year += 79;
-                }
+                System.out.println(year);
             }
         }
     }
